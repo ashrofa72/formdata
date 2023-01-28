@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import students from "../pages/data/students";
 import styles from "../styles/newlayout.module.css";
 import Navbar from '@/components/Navbar'
+import { connectToDatabase } from "../pages/utils/mongodb";
 
 
 
-const newlayout = () => {
+const newlayout = ({formDocs}) => {
   const [stname, setStname] = useState();
   const [message, setMessage] = useState()
   const [formData, setFormData] = useState({
@@ -132,6 +133,17 @@ const newlayout = () => {
           </select>
           <p>{stname}</p>
           </div>
+          <div>
+            {formDocs.map((doc,i)=> (
+              <Row>
+                
+              <h3>{doc.name}</h3>
+              <p>{doc.dob}</p>
+              <p>{doc.nationalId}</p>
+             
+              </Row>
+            ))}
+          </div>
         </Col>
       </Row>
     
@@ -139,3 +151,15 @@ const newlayout = () => {
 };
 
 export default newlayout;
+
+export async function getServerSideProps(context) {
+  const { db } = await connectToDatabase();
+  const data = await db.collection("formdata").find({}).toArray();
+  const formDocs = JSON.parse(JSON.stringify(data));
+  console.log({ formDocs });
+  return {
+    props: {
+      formDocs: formDocs,
+    },
+  };
+}
