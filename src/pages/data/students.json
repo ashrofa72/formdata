@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Mohamed",
+        "grade": "Ten"
+    },
+    {
+        "id": 2,
+        "name": "Omar",
+        "grade": "Eleven"
+    },
+    {
+        "id": 3,
+        "name": "Nasser",
+        "grade": "Tweleve"
+    },
+    {
+        "id": 4,
+        "name": "Gaber",
+        "grade": "Ten"
+    }
+]

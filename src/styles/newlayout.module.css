@@ -1,0 +1,57 @@
+.datadev{
+  margin-left: 10px;
+}
+.datadev form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  .datadev h3{
+    text-align: center;
+  }
+  
+  .datadev label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .datadev input[type="text"],
+  .datadev input[type="date"] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .datadev input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 0px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .datadev input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .customerdev select{
+     width: 200px;
+     height: 40px;
+     color: brown;
+     font-size: 20px;
+     font-weight: bold;
+     text-align: center;
+     margin-bottom: 10px;
+  }
+  .customerdev p{
+    font-size: large;
+    font-weight: bold;
+  }
